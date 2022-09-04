@@ -1,0 +1,23 @@
+.no-result{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px 0;
+    padding-top: 50px;
+}
+.no-result-title{
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 56px;
+    letter-spacing: 0.0.6em;
+    text-align: center;
+    color: rgba(235, 238, 245, 1);
+    margin-top: -20px;
+
+}
+
+.no-result-image{
+    object-fit: cover;
+    display: block;
+}

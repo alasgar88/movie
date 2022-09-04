@@ -1,0 +1,125 @@
+.title{
+    padding-top: 80px;
+    font-family: Poppins;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 80px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    // color: #EBEEF5;
+    margin-bottom: 15px;
+    color: rgba(235, 238, 245, 1);
+
+}
+
+.title-info{
+    width: 58%;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #8E95A9;
+    span{
+        color: #9C92F8;
+    }
+}
+
+.search-movie {
+    display: flex;
+    align-items: center;
+    width: 344px;
+    height: 64px;
+    margin-top: 25px;
+    background: #121829;
+    border-radius: 12px;
+    padding: 12px 16px 12px 16px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(50, 59, 84, 1);
+}
+
+
+.ant-input{
+position: relative;
+left: 25px;
+background: transparent;
+border: none;
+//styleName: Caption;
+font-family: Poppins;
+font-size: 14px;
+font-weight: 400;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+outline: none;
+padding: 12px;
+
+
+}
+
+.ant-input::placeholder{
+color: rgba(71, 80, 105, 1);
+outline: none;
+}
+
+.ant-input-group-addon:last-child {
+    position: absolute;
+    left: -280px;
+}
+
+.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary) {
+    background: transparent;
+    color: rgba(0, 0, 0, 0.45);
+    border: none;
+    top: -1px;
+}
+
+.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child {
+    left: -1px;
+    padding: 0;
+    border: 0;
+    /* background: red; */
+    background: transparent;
+}
+
+.ant-input-search .ant-input:hover, .ant-input-search .ant-input:focus {
+color: rgba(71, 80, 105, 1);
+
+}
+
+.ant-input:focus{
+    box-shadow: none;
+}
+
+.anticon.anticon-search{
+    font-size: 19px;
+    top: 5px;
+    position: relative;
+    color: rgba(71, 80, 105, 1);
+}
+
+
+.movie-number{
+    margin-top: 30px;
+    margin-bottom: 25px;
+    color:#767E94;
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+
+    .number{
+    margin-left: 10px;
+    font-style: regular;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    }
+}
+
+

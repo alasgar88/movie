@@ -1,0 +1,23 @@
+.main-container{
+    position: relative;
+    // top: 150px;
+    z-index: 0;
+    min-height: calc(100vh - 80px);
+}
+
+// .main-container::after{
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     z-index: 1;
+//     background-image: url("../../assets//images//background.png") ;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     // background-size: cover;
+//     background-size: 100% 120%;
+//     pointer-events: none;
+
+// }

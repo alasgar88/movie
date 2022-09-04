@@ -1,0 +1,49 @@
+@import '~antd/dist/antd.css';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,300;0,500;1,400;1,700&family=Square+Peg&display=swap');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.App{
+  min-height: 100vh;
+  background: #121829;
+
+}
+
+.section-center{
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.App::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 150;
+    background-image: url("./assets/images/background.png") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    // background-size: cover;
+    background-size: 100% 120%;
+    pointer-events: none;
+
+}

@@ -1,0 +1,49 @@
+.header{
+    top: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    width: 100%;
+    z-index: 100;
+    background: rgba(18, 24, 41, 0.95);
+}
+
+    .menu-center{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        .menu-container-top{
+            display: flex;
+            justify-content: flex-end;
+            width:100%;
+        }
+
+    }
+    .logo{
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+
+.menu-button-icon{
+    display: none;
+    border: none;
+    background-color: #1A90FD;
+    &:hover{
+          background-color: #3e9bf2;
+    }
+}
+@media screen and (max-width: 790px) {
+    .menu-button-icon{
+        display: block;
+    }
+    .menu-container-top{
+        visibility: hidden;
+    }
+}
+
+
+

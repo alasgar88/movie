@@ -1,0 +1,126 @@
+.menu-item{
+    padding: 8px 8px 16px 8px;
+    background: rgba(32, 40, 62, 0.8);
+    border-radius: 8px;
+    position: relative;
+
+    transition: 0.5s all linear;
+    &:hover{
+        box-shadow: 0px 0px 5px  #1890ff ;
+    }
+
+
+}
+.movie-image{
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 360px;
+    // height: 356px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.movie-name-title{
+    // margin-left: 16px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    // line-height: 24px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    color: rgba(235, 238, 245, 1);
+    margin-top: 20px;
+    margin-left: 5px;
+    height: 20px;
+
+}
+
+.icon-container{
+    display: flex;
+    justify-content: space-between;
+    top:20px;
+    position: absolute;
+    height: 28px;
+    width: calc(100% - 15px);
+    padding: 0 5px;
+    transform: translateX(-50%);
+    left: 50%;
+    // z-index: 30;
+
+}
+.rating{
+    width: 60px;
+    height: 35px;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .star{
+        color: rgba(255, 173, 73, 1);
+        font-size: 16px;
+        width: 16px;
+    }
+    .star-rating{
+        color: rgba(255, 173, 73, 1);
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+}
+
+.suggest-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 8px;
+    width: 60px;
+    height: 35px;
+    .suggest {
+        color: rgba(255, 173, 73, 1);
+        font-size: 20px;
+        width: 20px;
+    }
+}
+
+
+.watch-icon-container{
+    display: flex;
+    align-items: center;
+    height: 32px;
+    width: 100%;
+    gap: 0 15px;
+    padding-left: 5px;
+    cursor: pointer;
+
+}
+
+.watch-icon-title{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: left;
+    line-height: 15px;
+    color: rgba(123, 110, 246, 1);
+
+    }
+
+
+.watch-icon{
+    position: relative;
+    top: 3px;
+    color:rgba(123, 110, 246, 1);;
+    font-size: 24px;
+    width: 24px;
+}
+
+.watch.active,.watch-icon-title.active {
+    color:rgba(55, 216, 167, 1);
+}
