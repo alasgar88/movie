@@ -2,7 +2,7 @@ import "./loading.scss";
 import { Col, Row } from "antd";
 import React from "react";
 
-const loadingCount = ["1", "2", "3", "4", "5", "6"];
+const loadingCount = ["1", "2", "3", "4", "5", "6", "7", "8"];
 
 const Loading = () => {
   return (

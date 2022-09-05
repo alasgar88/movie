@@ -63,7 +63,31 @@ color: #1890ff !important;}
   background: inherit;
 }
 
+.anticon {
+width: 25px;
+}
 
+.ant-menu-item .ant-menu-item-icon + span, .ant-menu-submenu-title .ant-menu-item-icon + span, .ant-menu-item .anticon + span, .ant-menu-submenu-title .anticon + span {
+    margin-left: 10px;
+    opacity: 1;
+    transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), margin 0.3s, color 0.3s;
+    position: relative;
+    top: -17px;
+    font-weight: 600;
+}
+
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
+    margin-top: -1px;
+    margin-bottom: 0;
+    padding: 0px 16px;
+}
+
+
+@media screen and (max-width: 790px) {
+.ant-menu-item .ant-menu-item-icon + span, .ant-menu-submenu-title .ant-menu-item-icon + span, .ant-menu-item .anticon + span, .ant-menu-submenu-title .anticon + span {
+    top: -14px;
+}
+}
 
 
 

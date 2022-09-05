@@ -1,18 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./detail.scss";
-import { StarOutlined } from "../../assets/icons/icons";
-import image from "../../assets/images/header.jpeg";
-import { MovieCard } from "../../components";
+import { MovieList } from "../../components";
 import { Col, Row } from "antd";
-import { getMovieDetail } from "../../store/features/category/categorySlice";
+import {
+  getMovieDetail,
+  addRemoveSuggest,
+  addRemoveWatchList,
+} from "../../store/features/category/categorySlice";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import {
+  LikeFilled,
+  StarOutlined,
+  VideoCameraFilled,
+  VideoCameraAddOutlined,
+  LikeOutlined,
+} from "../../assets/icons/icons";
 
 const Detail = () => {
-  const data = ["1", "2", "3"];
   const { id } = useParams();
-  const dispatch = useDispatch();
   const { detail } = useSelector((store) => store.category);
+  const [data, setData] = useState();
+  const dispatch = useDispatch();
   const {
     title,
     vote_average,
@@ -27,9 +37,27 @@ const Detail = () => {
   const imagePoster = `https://image.tmdb.org/t/p/original/${poster_path}`;
   const imageBackdrop = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
 
+  // scroll data and load new one
+
+  const loadMoreData = async () => {
+    const response = await axios(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=edeb82248f1fc52e3b9cca205e360bdc&language=en-US&page=1`
+    );
+    setData(response.data.results);
+    // console.log(newData);
+  };
+
+  useEffect(() => {
+    loadMoreData();
+  }, []);
+
   useEffect(() => {
     dispatch(getMovieDetail(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [id]);
   return (
     <>
       <div className='detail'>
@@ -64,9 +92,79 @@ const Detail = () => {
               <div className='detail-movie-info-container'>
                 <h2 className='info-title'>{title}</h2>
                 <div className='info-text'>{overview}</div>
-                <div className='rating'>
-                  {<StarOutlined className='star' />}{" "}
-                  <span className='star-rating'>{vote_average}</span>
+                <div className='icon-container-detail'>
+                  <div className='rating'>
+                    {<StarOutlined className='star' />}{" "}
+                    <span className='star-rating'>{vote_average}</span>
+                  </div>
+                  <div className='rating'>
+                    <div className='suggest-icon suggest-icon-background'>
+                      {detail.suggest ? (
+                        <LikeFilled
+                          className='suggest'
+                          onClick={(e) =>
+                            dispatch(
+                              addRemoveSuggest({
+                                id: detail.id,
+                                movie: detail,
+                                type: "suggest",
+                              })
+                            )
+                          }
+                        />
+                      ) : (
+                        <LikeOutlined
+                          className='suggest'
+                          // onClick={() => dispatch(addRemoveSuggest(id))}
+                          onClick={() =>
+                            dispatch(
+                              addRemoveSuggest({
+                                id: detail.id,
+                                movie: detail,
+                                type: "suggest",
+                              })
+                            )
+                          }
+                        />
+                      )}
+                    </div>
+                  </div>
+                  <div className='rating'>
+                    <div className='watch-icon suggest-icon-background'>
+                      {detail.watchList ? (
+                        <VideoCameraFilled
+                          onClick={() => {
+                            dispatch(
+                              addRemoveWatchList({
+                                id,
+                                movie: detail,
+                                type: "watch",
+                              })
+                            );
+                          }}
+                          className={`${
+                            detail.watchList ? "watch active" : "watch"
+                          }`}
+                        />
+                      ) : (
+                        <VideoCameraAddOutlined
+                          onClick={() => {
+                            // dispatch(addRemoveWatchList(id));
+                            dispatch(
+                              addRemoveWatchList({
+                                id,
+                                movie: detail,
+                                type: "watch",
+                              })
+                            );
+                          }}
+                          className={`${
+                            detail.watchList ? "watch active" : "watch"
+                          }`}
+                        />
+                      )}
+                    </div>
+                  </div>
                 </div>
                 <div className='type'>
                   <span className='title-span'>Type</span>
@@ -98,22 +196,7 @@ const Detail = () => {
           <p className='recomended-title'>Similar movies</p>
         </div>
         <div className='recomended-container'>
-          <Row gutter={[24, 20]}>
-            {data.map((data, index) => {
-              return (
-                <Col
-                  key={index}
-                  xs={{ span: 24 }}
-                  sm={{ span: 12 }}
-                  md={{ span: 8 }}
-                  lg={{ span: 8 }}
-                >
-                  <MovieCard />
-                </Col>
-              );
-            })}
-            <Col span={8} />
-          </Row>
+          <MovieList search={false} results={data?.slice(0, 8)} />
         </div>
       </div>
     </>

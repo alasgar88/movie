@@ -136,6 +136,7 @@
             display: flex;
             align-items: center;
             justify-content: space-evenly;
+            padding: 0 40px;
             .star{
                 color: rgba(255, 173, 73, 1);
                 font-size: 16px;
@@ -247,4 +248,12 @@
 
 }
 
+.icon-container-detail{
+    display: flex;
+    gap: 0 10px;
+}
 
+
+.suggest-icon.suggest-icon-background{
+    background: transparent;
+}
