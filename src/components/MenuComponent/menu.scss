@@ -89,5 +89,12 @@ width: 25px;
 }
 }
 
+@media screen and (max-width: 412px) {
+  .ant-drawer-content-wrapper{
+  width: 100% !important;
+  }
+}
+
+
 
 
