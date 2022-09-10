@@ -6,7 +6,7 @@ import "./menu.scss";
 import { LikeOutlined, VideoCameraFilled } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 
-const MenuComponent = ({ mode }) => {
+const MenuComponent = ({ mode, setVisible }) => {
   // menu default list
   let menuItems = [
     {
@@ -65,7 +65,9 @@ const MenuComponent = ({ mode }) => {
         : e.key === "watch_list"
         ? "list/watch_list"
         : e.key;
-
+    setTimeout(() => {
+      setVisible(false);
+    }, 1000);
     navigate(`/${key}`);
   };
 

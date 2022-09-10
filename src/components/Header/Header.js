@@ -27,7 +27,7 @@ const Header = () => {
           onClick={() => navigate("/")}
         />
         <div className='menu-container-top'>
-          <MenuComponent />
+          <MenuComponent setVisible={setVisible} />
         </div>
 
         <Button
@@ -44,7 +44,7 @@ const Header = () => {
           visible={visible}
         >
           <div className='menu-container'>
-            <MenuComponent mode='inline' />
+            <MenuComponent mode='inline' setVisible={setVisible} />
           </div>
         </Drawer>
       </div>
